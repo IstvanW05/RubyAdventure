@@ -21,6 +21,7 @@ public class RubyController : MonoBehaviour
     // ======== AUDIO ==========
     public AudioClip hitSound;
     public AudioClip shootingSound;
+    public AudioClip loseSound;
     
     // ======== HEALTH ==========
     public int health
@@ -168,6 +169,11 @@ public class RubyController : MonoBehaviour
 
             speed = 0.0f;
             print("Game Over!");
+            
+            audioSource.PlayOneShot(loseSound);
+
+            isInvincible = true;
+            invincibleTimer = 99999999.0f;
 
             gameOverText.SetActive(true);
           }
@@ -214,6 +220,7 @@ public class RubyController : MonoBehaviour
 
             speed = 0.0f;
             print("Game Over!");
+            
         }
     }
 }

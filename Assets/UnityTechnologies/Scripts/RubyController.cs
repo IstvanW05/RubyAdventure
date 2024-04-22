@@ -9,7 +9,7 @@ public class RubyController : MonoBehaviour
     public float speed = 4;
     
     // ======== HEALTH ==========
-    public int maxHealth = 5;
+    public int maxHealth = 15;
     public float timeInvincible = 2.0f;
     public ParticleSystem hitParticle;
     public ParticleSystem damageParticle;
@@ -101,6 +101,10 @@ public class RubyController : MonoBehaviour
                         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                         print("World reset!");
                     }
+                }
+        if (Input.GetKeyDown(KeyCode.P))
+                {
+                    ChangeHealth(5);
                 }
 
 
